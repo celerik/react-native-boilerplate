@@ -1,21 +1,10 @@
-import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import HomePage from "./home-page";
 
-export default function App() {
-  return (
-    <View style={styles.container} >
-      <Text>Save the planet 🌳</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const AppContainer = () => (
+  <>
+    <HomePage />
+  </>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    flex: 1,
-    justifyContent: 'center',
-  },
-});
+export default AppContainer;
