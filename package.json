@@ -28,6 +28,9 @@
     "react-test-renderer": "~16.13.1"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
+    ],
     "preset": "react-native"
   },
   "private": true
