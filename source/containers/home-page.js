@@ -1,5 +1,5 @@
+// @packages
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
 const App = () => (
     <View style={styles.container}>
       <Text>🌳 Welcome to CELERIK 🌳</Text>
-      <StatusBar style="auto" />
     </View>
 );
 

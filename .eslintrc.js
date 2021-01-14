@@ -22,7 +22,7 @@ module.exports = {
         'no-shadow': 0,
         'no-useless-constructor': 0,
         'react/forbid-prop-types': 0,
-        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+        'react/jsx-filename-extension': [1, { extensions: ['.jsx'] }],
         'react/jsx-indent': 0,
         'react/jsx-indent-props': ['error', 4],
         'react/no-array-index-key': 0,
