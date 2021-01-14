@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer' ;
 
 const sum = (...params) => params.reduce((prev, curr) => prev + curr, 0);
 
-it('renders correctly', () => {
+it('unit-test-sum', () => {
   expect(sum(1, 2, 3)).toBe(6);
   expect(sum(2, 2, 2)).toBe(6);
   expect(sum(4, 2, 3)).toBe(9);
