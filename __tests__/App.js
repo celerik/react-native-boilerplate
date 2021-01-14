@@ -1,5 +1,3 @@
-//Inside this folder all the tests can be added no matter if the tests are
-//nested or are in a single file like this.
 import 'react-native';
 import HomePage from '../source/containers/home-page';
 import React from 'react';
