@@ -1,9 +1,10 @@
+// @packages
 import 'react-native';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from '../source/containers/app';
 
-// Note: test renderer must be required after react-native.
+// @scripts
+import App from '../source/containers/app';
 
 it('renders correctly', () => {
     renderer.create(<App />);
