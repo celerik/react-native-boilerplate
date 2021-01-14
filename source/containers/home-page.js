@@ -1,12 +1,12 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Text>🌳 Welcome to CELERIK 🌳</Text>
-      <StatusBar style="auto" />
+      <TextInput style={styles.input} placeholder="Enter your email"/>
+      <TextInput style={styles.input} placeholder="Enter your password"/>
     </View>
   );
 }
@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  input: {
+    margin: "1px solid #000",
+    marginBottom: 10,
+    padding: 15,
+    width: "90%",
+  }
 });
 
 export default App;
