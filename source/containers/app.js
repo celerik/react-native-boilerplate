@@ -1,9 +1,9 @@
 import React from "react";
-import HomePage from "./home-page";
+import LoginPage from "./login-page/index";
 
 const AppContainer = () => (
   <>
-    <HomePage />
+    <LoginPage />
   </>
 );
 
