@@ -1,10 +1,7 @@
+//@packages
 import React from "react";
-import LoginPage from "./login-page/index";
+import Navigator from "../navigations/";
 
-const AppContainer = () => (
-  <>
-    <LoginPage />
-  </>
-);
+const AppContainer = () => <Navigator />;
 
 export default AppContainer;
