@@ -1,11 +1,7 @@
-// @packages
-import React from 'react';
-import HomePage from './home-page';
+//@packages
+import React from "react";
+import Navigator from "../navigations/";
 
-const AppContainer = () => (
-    <>
-    <HomePage />
-    </>
-);
+const AppContainer = () => <Navigator />;
 
 export default AppContainer;
