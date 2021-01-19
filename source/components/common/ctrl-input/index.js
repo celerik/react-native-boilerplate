@@ -1,15 +1,15 @@
 //@packages
 import PropTypes from "prop-types";
 import React from "react";
-import { View, Text, TextInput } from "react-native";
+import { Text, TextInput, View } from "react-native";
 
 //@scripts
 import styles from "./styles";
 
 const CtrlInput = (props) => {
   return (
-    <View>
-      <TextInput {...props} />
+    <View style={styles.inputComponent}>
+      <TextInput {...props} style={props.inputStyle} />
       {props.errorText && (
         <Text style={styles.errorText}>{props.errorText}</Text>
       )}
@@ -19,6 +19,7 @@ const CtrlInput = (props) => {
 
 CtrlInput.propTypes = {
   errorText: PropTypes.string,
+  inputStyle: PropTypes.object,
 };
 
 export default CtrlInput;

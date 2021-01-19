@@ -5,32 +5,43 @@ import Styles from "../../styles/index";
 export default StyleSheet.create({
   buttonText: {
     color: "white",
-  },  
+  },
   container: {
     alignItems: "center",
     backgroundColor: "#fff",
     flex: 1,
     justifyContent: "center",
+    width: '100%'
   },
   forgot: {
     fontSize: 11,
   },
   icon: {
-    fontSize: 20
+    fontSize: 20,
   },
   input: {
     alignSelf: "center",
     backgroundColor: Styles.Colors.PRIMARY,
     borderRadius: 25,
-    height: 50,
+    color: "white",
+    height: 55,
     justifyContent: "center",
-    marginBottom: 35,
+    marginBottom: 5,
     padding: 20,
     position: "relative",
     width: "80%",
   },
+  inputPassword: {
+    backgroundColor: Styles.Colors.PRIMARY,
+    borderRadius: 25,
+    color: 'white',
+    height: 55,
+    padding: 20,
+    margin: 0,
+    width: '80%',
+  },
   inputText: {
-    color: "white"
+    color: "white",
   },
   loginButton: {
     alignItems: "center",
@@ -41,6 +52,7 @@ export default StyleSheet.create({
     justifyContent: "center",
     marginBottom: 10,
     marginTop: 20,
+    position: "relative",
     width: "40%",
   },
   mainTitle: {
@@ -48,11 +60,15 @@ export default StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
   },
+  searchSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    height: 70,
+    marginBottom: 10
+  },
   touchableButton: {
-    height: 25,
-    padding: 2,
-    position: "absolute",
-    right: 3,
-    width: 35,
+    position: 'absolute',
+    right: 50,
+    top: 15,
   },
 });
