@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import { Text, View, TextInput, TouchableOpacity } from "react-native";
 
 //@scripts
+import createServer from '../../config/mockData/login'
 import Icon from "../../components/common/ctrl-icons";
 import Context from "../../containers/login-page/context";
 import { lang } from "../../resources/index";
@@ -11,6 +12,14 @@ import { lang } from "../../resources/index";
 import styles from "./styles";
 
 const App = () => {
+
+  React.useEffect(() => {
+    // const server = createServer;
+    fetch("/api/movies")
+      .then((res) => res.json())
+      .then((json) => console.log(json.movies))
+  }, [])
+
   const { state, setState } = useContext(Context);
   const [showPassword, setShowPassword] = useState(true);
 
