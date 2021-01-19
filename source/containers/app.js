@@ -1,10 +1,10 @@
+//@packages
 import React from "react";
-import LoginPage from "./login-page/index";
+import Navigator from "../navigations/";
 
-const AppContainer = () => (
-  <>
-    <LoginPage />
-  </>
-);
+//@scripts
+import '../config/mockData/'
+
+const AppContainer = () => <Navigator />;
 
 export default AppContainer;

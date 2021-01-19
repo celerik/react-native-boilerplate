@@ -1,6 +1,11 @@
+//@packages
 import { StyleSheet } from "react-native";
+import Styles from "../../styles/index";
 
 export default StyleSheet.create({
+  buttonText: {
+    color: "white",
+  },  
   container: {
     alignItems: "center",
     backgroundColor: "#fff",
@@ -15,23 +20,23 @@ export default StyleSheet.create({
   },
   input: {
     alignSelf: "center",
-    backgroundColor: "#F15E22",
+    backgroundColor: Styles.Colors.PRIMARY,
     borderRadius: 25,
     height: 50,
     justifyContent: "center",
-    marginBottom: 20,
+    marginBottom: 35,
     padding: 20,
     position: "relative",
     width: "80%",
   },
   inputText: {
-    color: "white",
-    height: 50,
+    color: "white"
   },
   loginButton: {
     alignItems: "center",
-    backgroundColor: "#E34163",
+    backgroundColor: Styles.Colors.SECONDARY,
     borderRadius: 25,
+    color: Styles.Colors.WHITE,
     height: 50,
     justifyContent: "center",
     marginBottom: 10,

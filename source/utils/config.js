@@ -1,0 +1,1 @@
+export const URL = 'www.celerikMock.com'
