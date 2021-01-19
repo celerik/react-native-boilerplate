@@ -26,14 +26,10 @@ const LoginPage = ({ navigation }) => {
     logIn(data.email, data.password)
     .then((res) => res.json())
       .then((result) => {
-        console.log(result, 'jejeje')
       });
-    console.log(result, 'PERICO')
     if(result.status === 201) {
-      console.log('esa no wea fallo')
       await storeData({ email: data.email }, "auth_data");
     } else {
-      console.log('esa wea fallo')
     }
   };
 
