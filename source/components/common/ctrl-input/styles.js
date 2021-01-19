@@ -5,6 +5,15 @@ import Styles from "../../../styles/index";
 export default StyleSheet.create({
   errorText: {
     color: Styles.Colors.ERROR,
-    marginTop: 3,
+    marginBottom: 15,
+    marginLeft: 40,
+    marginTop: 4,
+    width: '80%',
   },
+  inputComponent: {
+    alignItems: 'center',
+    display: 'flex',
+    textAlign: 'left',
+    width: '100%',
+  }
 });

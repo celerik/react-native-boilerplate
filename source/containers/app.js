@@ -3,7 +3,7 @@ import React from "react";
 import Navigator from "../navigations/";
 
 //@scripts
-import '../config/mockData/'
+import '../config/mockData/';
 
 const AppContainer = () => <Navigator />;
 
