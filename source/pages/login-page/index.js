@@ -1,12 +1,12 @@
 //@packages
 import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
-import { useForm, Controller } from "react-hook-form";
+import React from "react";
+import { Text, View } from "react-native";
+import { useForm } from "react-hook-form";
 
 //@scripts
-import CtrlInput from "../../components/common/ctrl-input";
-import Icon from "../../components/common/ctrl-icons";
+import Button from "../../components/atoms/button";
+import CtrlInputController from "../../components/organisms/ctr-input-form";
 import { lang } from "../../resources/index";
 import { storeData } from "../../utils/auth";
 
@@ -16,9 +16,6 @@ import styles from "./styles";
 const LoginPage = ({ navigation }) => {
   const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const { errors, handleSubmit, control } = useForm();
-  const [showPassword, setShowPassword] = useState(true);
-
-  const onSetVisibility = () => setShowPassword(!showPassword);
 
   const onLogin = async (data) => {
     await storeData({ email: data.email }, "auth_data");
@@ -27,71 +24,46 @@ const LoginPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.mainTitle}>{lang.en.loginPage.title}</Text>
-      <Controller
+      <CtrlInputController
+        control={control}
         defaultValue=""
+        errorMessage="Email is required"
+        errors={errors}
+        isRequired={true}
         name="email"
+        placeHolder="Enter your email"
+        placeHolderTextColor="#fff"
+        regexExpression={EMAIL_REGEX}
+        regexMessage="Not a valid email"
+      />
+      <CtrlInputController
         control={control}
-        render={({ onChange, value }) => (
-          <CtrlInput
-            errorText={errors?.email?.message}
-            onChangeText={(text) => onChange(text)}
-            placeholder={lang.en.loginPage.email}
-            inputStyle={styles.input}
-            placeholderTextColor="#fff"
-            value={value}
-          />
-        )}
-        rules={{
-          required: { value: true, message: "Email is required" },
-          pattern: {
-            message: "Not a valid email",
-            value: EMAIL_REGEX,
-          },
-        }}
-      ></Controller>
-      <Controller
         defaultValue=""
+        errorMessage="Password is required"
+        errors={errors}
+        isRequired={true}
         name="password"
-        control={control}
-        render={({ onChange, value }) => (
-          <View style={styles.searchSection}>
-            <CtrlInput
-              errorText={errors?.password?.message}
-              onChangeText={(text) => onChange(text)}
-              placeholder={lang.en.loginPage.password}
-              placeholderTextColor="#fff"
-              inputStyle={styles.inputPassword}
-              secureTextEntry={showPassword}
-              style={styles.inputText}
-              value={value}
-            />
-            <TouchableOpacity
-              activeOpacity={0.8}
-              style={styles.touchableButton}
-              onPress={onSetVisibility}
-            >
-              {showPassword ? (
-                <Icon name="eye" size={20} />
-              ) : (
-                <Icon name="eye-off" size={20} />
-              )}
-            </TouchableOpacity>
-          </View>
-        )}
-        rules={{ required: { value: true, message: "Password is required" } }}
-      ></Controller>
-      <TouchableOpacity>
-        <Text style={styles.forgot}>{lang.en.loginPage.forgotPassword}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={onChangeState} style={styles.loginButton}>
-        <Text style={styles.buttonText}>{lang.en.loginPage.signUp}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={handleSubmit(onLogin)}
-        style={styles.loginButton}
+        placeHolder="Enter your password"
+        placeHolderTextColor="#fff"
+        showPasswordIcon={true}
+      />
+      <Button onPress={Function.prototype} textStyle={styles.forgot}>
+        {lang.en.loginPage.forgotPassword}
+      </Button>
+      <Button
+        onPress={Function.prototype}
+        buttonStyle={styles.loginButton}
+        textStyle={styles.buttonText}
       >
-        <Text style={styles.buttonText}>{lang.en.loginPage.login}</Text>
-      </TouchableOpacity>
+        {lang.en.loginPage.signUp}
+      </Button>
+      <Button
+        onPress={handleSubmit(onLogin)}
+        buttonStyle={styles.loginButton}
+        textStyle={styles.buttonText}
+      >
+        {lang.en.loginPage.login}
+      </Button>
     </View>
   );
 };
