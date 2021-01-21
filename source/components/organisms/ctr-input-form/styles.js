@@ -2,8 +2,7 @@
 import { StyleSheet } from "react-native";
 import Styles from "../../../styles/index";
 
-export default StyleSheet.create({
-    
+export default StyleSheet.create({ 
   inputPassword: {
     backgroundColor: Styles.Colors.PRIMARY,
     borderRadius: 25,

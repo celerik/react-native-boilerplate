@@ -9,7 +9,7 @@ import CtrlInput from "../../molecules/ctrl-input";
 import Icon from "../../atoms/ctrl-icons";
 
 //@scripts
-import styles from "./style";
+import styles from "./styles";
 
 const CtrlInputController = ({
   control,

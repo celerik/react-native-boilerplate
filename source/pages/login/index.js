@@ -13,9 +13,13 @@ import { storeData } from "../../utils/auth";
 //@styles
 import styles from "./styles";
 
+//@const
+import { EMAIL_REGEX } from "../../utils/regexExpresions";
+
 const LoginPage = ({ navigation }) => {
-  const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const { errors, handleSubmit, control } = useForm();
+
+  const onChangeScreen = (name) => navigation.navigate(name);
 
   const onLogin = async (data) => {
     await storeData({ email: data.email }, "auth_data");
@@ -27,39 +31,42 @@ const LoginPage = ({ navigation }) => {
       <CtrlInputController
         control={control}
         defaultValue=""
-        errorMessage="Email is required"
+        errorMessage={lang.en.loginPage.errorMessageEmail}
         errors={errors}
         isRequired={true}
         name="email"
-        placeHolder="Enter your email"
+        placeHolder={lang.en.loginPage.email}
         placeHolderTextColor="#fff"
         regexExpression={EMAIL_REGEX}
-        regexMessage="Not a valid email"
+        regexMessage={lang.en.loginPage.errorMessageRegexExpr}
       />
       <CtrlInputController
         control={control}
         defaultValue=""
-        errorMessage="Password is required"
+        errorMessage={lang.en.loginPage.errorMessagePassword}
         errors={errors}
         isRequired={true}
         name="password"
-        placeHolder="Enter your password"
+        placeHolder={lang.en.loginPage.password}
         placeHolderTextColor="#fff"
         showPasswordIcon={true}
       />
-      <Button onPress={Function.prototype} textStyle={styles.forgot}>
+      <Button
+        onPress={() => onChangeScreen("ForgotPassword")}
+        textStyle={styles.forgot}
+      >
         {lang.en.loginPage.forgotPassword}
       </Button>
       <Button
-        onPress={Function.prototype}
         buttonStyle={styles.loginButton}
+        onPress={() => onChangeScreen("SignUp")}
         textStyle={styles.buttonText}
       >
         {lang.en.loginPage.signUp}
       </Button>
       <Button
-        onPress={handleSubmit(onLogin)}
         buttonStyle={styles.loginButton}
+        onPress={handleSubmit(onLogin)}
         textStyle={styles.buttonText}
       >
         {lang.en.loginPage.login}

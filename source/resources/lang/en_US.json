@@ -1,10 +1,32 @@
 {
-  "loginPage": {
-    "title": "Enter to the app",
+  "forgotPasswordPage": {
     "email": "Enter your email",
-    "password": "Enter your password",
+    "errorMessageEmail": "Email is required",
+    "errorMessageRegexExpr": "Email is not valid",
+    "recoverPassword": "Recover password",
+    "title": "Recover your account"
+  },
+  "loginPage": {
+    "email": "Enter your email",
+    "errorMessageEmail": "Email is required",
+    "errorMessagePassword": "Password is required",
+    "errorMessageRegexExpr": "Email is not valid",
     "forgotPassword": "Forgot password?",
+    "login": "Login",
+    "password": "Enter your password",
     "signUp": "Sign up",
-    "login": "Login"
+    "title": "Enter to the app"
+  },
+  "signUpPage": {
+    "confirmPassword": "Confirm your password",
+    "email": "Enter your email",
+    "errorMessageConfirmPassword": "Confirm password is required",
+    "errorMessageEmail": "Email is required",
+    "errorMessageName": "Name is required",
+    "errorMessagePassword": "Password is required",
+    "errorMessageRegexExpr": "Email is not valid",
+    "name": "Enter your name",
+    "password": "Enter your password",
+    "register": "Register"
   }
 }
