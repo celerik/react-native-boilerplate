@@ -1,3 +1,4 @@
+// @packages
 import 'react-native';
 import HomePage from '../source/containers/home-page';
 import React from 'react';
