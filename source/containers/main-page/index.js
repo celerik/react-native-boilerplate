@@ -1,17 +1,19 @@
-//@packages
-import HomeContext from "./context";
-import React from "react";
-import { Text } from "react-native";
-import initState from "./initState.json";
+// @packages
+import React, { useState } from 'react';
+import HomeContext from './context';
+import initState from './initState.json';
 
-const HomePage = () => {
-  const [state, setState] = React.useState(initState);
+// @scripts
+import Home from '../../pages/main';
 
-  return (
+const HomePage = ({ navigation }) => {
+    const [state, setState] = useState(initState);
+
+    return (
     <HomeContext.Provider value={{ state, setState }}>
-      <Text>🌎 HOME PAGE 🌎</Text>
+      <Home navigation={navigation} />
     </HomeContext.Provider>
-  );
+    );
 };
 
 export default HomePage;

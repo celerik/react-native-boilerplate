@@ -1,10 +1,10 @@
-//@packages
-import React from "react";
-import initState from "./initState.json";
+// @packages
+import React from 'react';
+import initState from './initState.json';
 
 const loginState = React.createContext({
-  state: initState,
-  setState: () => {},
+    state: initState,
+    setState: () => {}
 });
 
 export default loginState;

@@ -1,8 +1,8 @@
-//@packages
-import { StyleSheet } from "react-native";
+// @packages
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  defaultStyle: {
-    padding: 5,
-  },
+    defaultStyle: {
+        padding: 5
+    }
 });

@@ -1,4 +1,4 @@
-//PRIMARY COLORS
+// PRIMARY COLORS
 export const PRIMARY = '#F15E25';
 export const SECONDARY = '#755391';
 export const WHITE = '#FFFFFF';
