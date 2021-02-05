@@ -39,10 +39,10 @@ const CtrlInputController = ({
         <View style={styles.searchSection}>
           <CtrlInput
               errorText={errors[name]?.message}
+              inputStyle={styles.inputPassword}
               onChangeText={(text) => onChange(text)}
               placeholder={placeHolder}
               placeholderTextColor={placeHolderTextColor}
-              inputStyle={styles.inputPassword}
               secureTextEntry={showPassword}
               style={styles.inputText}
               value={value}
@@ -50,8 +50,8 @@ const CtrlInputController = ({
           {showPasswordIcon && (
             <TouchableOpacity
                 activeOpacity={0.8}
-                style={styles.touchableButton}
                 onPress={onSetVisibility}
+                style={styles.touchableButton}
             >
               {showPassword ? (
                 <Icon name="eye" size={20} />

@@ -11,7 +11,7 @@ module.exports = {
         'comma-dangle': ['error', 'never'],
         'function-paren-newline': ['error', 'consistent'],
         'import/prefer-default-export': 0,
-        indent: ['error', 4, { SwitchCase: 1, ignoredNodes: ['JSXElement'] }],
+        'indent': ['error', 4, { SwitchCase: 1, ignoredNodes: ['JSXElement'] }],
         'jsx-a11y/alt-text': 0,
         'max-len': [1, 120, 2, { ignoreComments: true }],
         'no-case-declarations': 0,
