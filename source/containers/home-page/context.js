@@ -1,10 +1,10 @@
 //@packages
 import React from "react";
-import initState from "./initState.json";
+import initState from "./initial-state.json";
 
 const homeState = React.createContext({
-  state: initState,
   setState: () => {},
+  state: initState,
 });
 
 export default homeState;
