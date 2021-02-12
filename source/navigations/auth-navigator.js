@@ -1,6 +1,6 @@
 // @packages
 import { createStackNavigator } from 'react-navigation-stack';
-import ForgotPasswordScreen from '../pages/forgotPassword';
+import ForgotPasswordScreen from '../pages/forgot-password';
 import LoginScreen from '../containers/login-page';
 import SignUpScreen from '../containers/sign-up-page';
 

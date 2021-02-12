@@ -14,7 +14,7 @@ import { storeData } from '../../utils/auth';
 import styles from './styles';
 
 // @const
-import { EMAIL_REGEX } from '../../utils/regexExpresions';
+import { EMAIL_REGEX } from '../../utils/regex-expresions';
 
 const LoginPage = ({ navigation }) => {
     const { errors, handleSubmit, control } = useForm();

@@ -13,7 +13,7 @@ import { showSnackBar } from '../../utils/snackbar';
 import styles from './styles';
 
 // @const
-import { EMAIL_REGEX } from '../../utils/regexExpresions';
+import { EMAIL_REGEX } from '../../utils/regex-expresions';
 
 const ForgotPasswordPage = () => {
     const { errors, handleSubmit, control } = useForm();
