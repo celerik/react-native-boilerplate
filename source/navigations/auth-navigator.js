@@ -1,8 +1,8 @@
 // @packages
 import { createStackNavigator } from 'react-navigation-stack';
 import ForgotPasswordScreen from '../pages/forgot-password';
-import LoginScreen from '../containers/login-page';
-import SignUpScreen from '../containers/sign-up-page';
+import LoginScreen from '../pages/login';
+import SignUpScreen from '../pages/sign-up';
 
 const AuthNavigatorConfig = {
     header: null,

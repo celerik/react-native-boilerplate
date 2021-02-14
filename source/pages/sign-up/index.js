@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 // @scripts
 import Button from '../../components/atoms/button';
 import CtrlInputController from '../../components/organisms/ctr-input-form';
-import { lang } from '../../resources/index';
+import { config } from '../../resources';
 import { showSnackBar } from '../../utils/snackbar';
 
 // @styles
@@ -27,48 +27,48 @@ const SignUpPage = () => {
 
     return (
     <View style={styles.container}>
-      <Text style={styles.mainTitle}>{lang.en.signUpPage.register}</Text>
+      <Text style={styles.mainTitle}>{config.text.signUpPage.register}</Text>
       <CtrlInputController
           control={control}
           defaultValue=""
-          errorMessage={lang.en.signUpPage.errorMessageEmail}
+          errorMessage={config.text.signUpPage.errorMessageEmail}
           errors={errors}
           isRequired
           name="email"
-          placeHolder={lang.en.signUpPage.email}
+          placeHolder={config.text.signUpPage.email}
           placeHolderTextColor="#fff"
           regexExpression={EMAIL_REGEX}
-          regexMessage={lang.en.signUpPage.errorMessageRegexExpr}
+          regexMessage={config.text.signUpPage.errorMessageRegexExpr}
       />
       <CtrlInputController
           control={control}
           defaultValue=""
-          errorMessage={lang.en.signUpPage.errorMessageName}
+          errorMessage={config.text.signUpPage.errorMessageName}
           errors={errors}
           isRequired
           name="name"
-          placeHolder={lang.en.signUpPage.name}
+          placeHolder={config.text.signUpPage.name}
           placeHolderTextColor="#fff"
       />
       <CtrlInputController
           control={control}
           defaultValue=""
-          errorMessage={lang.en.signUpPage.errorMessagePassword}
+          errorMessage={config.text.signUpPage.errorMessagePassword}
           errors={errors}
           isRequired
           name="password"
-          placeHolder={lang.en.signUpPage.password}
+          placeHolder={config.text.signUpPage.password}
           placeHolderTextColor="#fff"
           showPasswordIcon
       />
       <CtrlInputController
           control={control}
           defaultValue=""
-          errorMessage={lang.en.signUpPage.errorMessageConfirmPassword}
+          errorMessage={config.text.signUpPage.errorMessageConfirmPassword}
           errors={errors}
           isRequired
           name="confirmPassword"
-          placeHolder={lang.en.signUpPage.confirmPassword}
+          placeHolder={config.text.signUpPage.confirmPassword}
           placeHolderTextColor="#fff"
           showPasswordIcon
       />
@@ -77,7 +77,7 @@ const SignUpPage = () => {
           buttonStyle={styles.loginButton}
           textStyle={styles.buttonText}
       >
-        {lang.en.signUpPage.register}
+        {config.text.signUpPage.register}
       </Button>
     </View>
     );

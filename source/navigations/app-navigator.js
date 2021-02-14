@@ -1,6 +1,6 @@
 // @packages
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import HomeScreen from '../containers/main-page';
+import HomeScreen from '../pages/main';
 
 const TabNavigatorConfig = {
     header: null,

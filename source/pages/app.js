@@ -4,6 +4,7 @@ import Navigator from '../navigations';
 
 // @scripts
 import { getData } from '../utils/auth';
+import { MainPageProvider } from '../core';
 
 const AppContainer = () => {
     const [initRoute, setInitRoute] = useState('Auth');
@@ -18,7 +19,11 @@ const AppContainer = () => {
         });
     }, []);
 
-    return <Navigator initRoute={initRoute} />;
+    return (
+        <MainPageProvider>
+            <Navigator initRoute={initRoute} />
+        </MainPageProvider>
+    );
 };
 
 export default AppContainer;

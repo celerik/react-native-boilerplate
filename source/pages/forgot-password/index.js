@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 // @scripts
 import Button from '../../components/atoms/button';
 import CtrlInputController from '../../components/organisms/ctr-input-form';
-import { lang } from '../../resources/index';
+import { config } from '../../resources/index';
 import { showSnackBar } from '../../utils/snackbar';
 
 // @styles
@@ -27,25 +27,25 @@ const ForgotPasswordPage = () => {
 
     return (
     <View style={styles.container}>
-      <Text style={styles.mainTitle}>{lang.en.forgotPasswordPage.title}</Text>
+      <Text style={styles.mainTitle}>{config.text.forgotPasswordPage.title}</Text>
       <CtrlInputController
           control={control}
           defaultValue=""
-          errorMessage={lang.en.forgotPasswordPage.errorMessageEmail}
+          errorMessage={config.text.forgotPasswordPage.errorMessageEmail}
           errors={errors}
           isRequired
           name="email"
-          placeHolder={lang.en.forgotPasswordPage.email}
+          placeHolder={config.text.forgotPasswordPage.email}
           placeHolderTextColor="#fff"
           regexExpression={EMAIL_REGEX}
-          regexMessage={lang.en.forgotPasswordPage.errorMessageRegexExpr}
+          regexMessage={config.text.forgotPasswordPage.errorMessageRegexExpr}
       />
       <Button
           onPress={handleSubmit(onRecoverAccount)}
           buttonStyle={styles.loginButton}
           textStyle={styles.buttonText}
       >
-        {lang.en.forgotPasswordPage.recoverPassword}
+        {config.text.forgotPasswordPage.recoverPassword}
       </Button>
     </View>
     );
