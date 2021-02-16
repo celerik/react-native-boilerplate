@@ -2,7 +2,7 @@
 import React from 'react';
 import Login from '../../pages/login';
 import LoginContext from './context';
-import initState from './initState.json';
+import initState from './init-state.json';
 
 const LoginPage = ({ navigation }) => {
     const [state, setState] = React.useState(initState);

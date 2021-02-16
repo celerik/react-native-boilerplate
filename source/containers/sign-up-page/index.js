@@ -2,7 +2,7 @@
 import React from 'react';
 import LoginContext from './context';
 import SignUp from '../../pages/sign-up';
-import initState from './initState.json';
+import initState from './init-state.json';
 
 const SignUpPage = () => {
     const [state, setState] = React.useState(initState);

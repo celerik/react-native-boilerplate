@@ -1,7 +1,7 @@
 // @packages
 import React, { useState } from 'react';
 import HomeContext from './context';
-import initState from './initState.json';
+import initState from './init-state.json';
 
 // @scripts
 import Home from '../../pages/main';
