@@ -5,6 +5,7 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 
 //@scripts
+import { logIn } from '../../utils/api/auth'
 import CtrlInput from "../../components/common/ctrl-input";
 import Icon from "../../components/common/ctrl-icons";
 import { lang } from "../../resources/index";
@@ -20,76 +21,78 @@ const LoginPage = ({ navigation }) => {
 
   const onSetVisibility = () => setShowPassword(!showPassword);
 
-  const onChangeState = async () => {
-  };
-
   const onLogin = async (data) => {
-    const result = await storeData({ email: data.email }, "auth_data");
+    const result = await logIn(data.email, data.password)
+    logIn(data.email, data.password)
+    .then((res) => res.json())
+      .then((result) => {
+      });
+    if(result.status === 201) {
+      await storeData({ email: data.email }, "auth_data");
+    } else {
+    }
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.mainTitle}>{lang.en.loginPage.title}</Text>
-      <View style={styles.input}>
-        <Controller
-          defaultValue=""
-          name="email"
-          control={control}
-          render={({ onChange, value }) => (
+      <Controller
+        defaultValue=""
+        name="email"
+        control={control}
+        render={({ onChange, value }) => (
+          <CtrlInput
+            errorText={errors?.email?.message}
+            onChangeText={(text) => onChange(text)}
+            placeholder={lang.en.loginPage.email}
+            inputStyle={styles.input}
+            placeholderTextColor="#fff"
+            value={value}
+          />
+        )}
+        rules={{
+          required: { value: true, message: "Email is required" },
+          pattern: {
+            message: "Not a valid email",
+            value: EMAIL_REGEX,
+          },
+        }}
+      ></Controller>
+      <Controller
+        defaultValue=""
+        name="password"
+        control={control}
+        render={({ onChange, value }) => (
+          <View style={styles.searchSection}>
             <CtrlInput
-              errorText={errors?.email?.message}
+              errorText={errors?.password?.message}
               onChangeText={(text) => onChange(text)}
-              placeholder={lang.en.loginPage.email}
+              placeholder={lang.en.loginPage.password}
               placeholderTextColor="#fff"
+              inputStyle={styles.inputPassword}
+              secureTextEntry={showPassword}
               style={styles.inputText}
               value={value}
             />
-          )}
-          rules={{
-            required: { value: true, message: "Email is required" },
-            pattern: {
-              message: "Not a valid email",
-              value: EMAIL_REGEX,
-            },
-          }}
-        ></Controller>
-      </View>
-      <View style={styles.input}>
-        <Controller
-          defaultValue=""
-          name="password"
-          control={control}
-          render={({ onChange, value }) => (
-            <>
-              <CtrlInput
-                errorText={errors?.password?.message}
-                onChangeText={(text) => onChange(text)}
-                placeholder={lang.en.loginPage.password}
-                placeholderTextColor="#fff"
-                secureTextEntry={showPassword}
-                style={styles.inputText}
-                value={value}
-              />
-              <TouchableOpacity
-                activeOpacity={0.8}
-                style={styles.touchableButton}
-                onPress={onSetVisibility}
-              >
-                {showPassword ? (
-                  <Icon name="eye" size={20} />
-                ) : (
-                  <Icon name="eye-off" size={20} />
-                )}
-              </TouchableOpacity>
-            </>
-          )}
-          rules={{ required: { value: true, message: "Password is required" } }}
-        ></Controller>
-      </View>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={styles.touchableButton}
+              onPress={onSetVisibility}
+            >
+              {showPassword ? (
+                <Icon name="eye" size={20} />
+              ) : (
+                <Icon name="eye-off" size={20} />
+              )}
+            </TouchableOpacity>
+          </View>
+        )}
+        rules={{ required: { value: true, message: "Password is required" } }}
+      ></Controller>
       <TouchableOpacity>
         <Text style={styles.forgot}>{lang.en.loginPage.forgotPassword}</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={onChangeState} style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton}>
         <Text style={styles.buttonText}>{lang.en.loginPage.signUp}</Text>
       </TouchableOpacity>
       <TouchableOpacity
