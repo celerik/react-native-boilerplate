@@ -1,18 +1,28 @@
-//@packages
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
+// @packages
+import React from 'react';
+import PropTypes from 'prop-types';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-//@scripts
-import AuthNavigator from "./auth-navigator";
-import AppNavigator from "./app-navigator";
+// @scripts
+import AppNavigator from './app-navigator';
+import AuthNavigator from './auth-navigator';
 
-const RootNavigator = createSwitchNavigator(
-  {
-    Auth: AuthNavigator,
-    App: AppNavigator,
-  },
-  {
-    initialRouteName: "Auth",
-  }
-);
+const Navigator = ({ initRoute }) => {
+    const RootNavigator = createSwitchNavigator(
+        {
+            Auth: AuthNavigator,
+            App: AppNavigator
+        },
+        {
+            initialRouteName: initRoute
+        }
+    );
+    const Container = createAppContainer(RootNavigator);
+    return <Container />;
+};
 
-export default createAppContainer(RootNavigator);
+Navigator.propTypes = {
+    initRoute: PropTypes.string.isRequired
+};
+
+export default Navigator;

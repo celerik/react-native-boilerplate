@@ -1,17 +1,17 @@
 // @packages
 import React from 'react';
-import Login from '../../pages/login';
 import LoginContext from './context';
+import SignUp from '../../pages/sign-up';
 import initState from './init-state.json';
 
-const LoginPage = ({ navigation }) => {
+const SignUpPage = () => {
     const [state, setState] = React.useState(initState);
 
     return (
     <LoginContext.Provider value={{ state, setState }}>
-      <Login navigation={navigation} />
+      <SignUp />
     </LoginContext.Provider>
     );
 };
 
-export default LoginPage;
+export default SignUpPage;

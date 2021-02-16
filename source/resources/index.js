@@ -1,6 +1,6 @@
 // @json
-import enUs from "./lang/en_US.json";
+import enUs from './lang/en-us.json';
 
 export const lang = {
-  en: enUs,
+    en: enUs
 };

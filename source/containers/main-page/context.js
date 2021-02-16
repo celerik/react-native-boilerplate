@@ -2,9 +2,9 @@
 import React from 'react';
 import initState from './init-state.json';
 
-const loginState = React.createContext({
+const homeState = React.createContext({
     state: initState,
     setState: () => {}
 });
 
-export default loginState;
+export default homeState;
