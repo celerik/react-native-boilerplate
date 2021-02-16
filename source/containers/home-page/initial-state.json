@@ -1,3 +1,6 @@
 {
-  "userInfo": {}
+  "userInfo": {
+    "name": null,
+    "lastName": null
+  }
 }
